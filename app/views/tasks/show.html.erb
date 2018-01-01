@@ -1,0 +1,11 @@
+<tr>
+  <p>名稱 ： <%= @task.title %></p>
+  <p>完成期限 ：<%= @task.due_date %></p>
+  <p>備註 ： <%= @task.note %></p>
+  
+</tr>
+<%= link_to '刪除', task_path(@task), method: :delete, data:{confirm: "確信刪除嗎"} %>
+|
+
+
+<%= link_to '回到首頁', tasks_path %>

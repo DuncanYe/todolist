@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pro</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    
+    <% if flash.present? %>
+      <div class="amendmsg">
+        <p style="color: green"><%= flash[:notice] %></p>
+        <p style="color: red"><%= flash[:alert] %></p>
+        <!-- notice綠色，alert紅色 -->
+      </div>
+    <% end %>
+    
+    <%= yield %>
+  </body>
+</html>

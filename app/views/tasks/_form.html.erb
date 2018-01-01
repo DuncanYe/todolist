@@ -1,0 +1,33 @@
+<% if @task.errors.present? %>
+  <ul>
+    <% @task.errors.each do |e, m| %>
+    <li><%= " #{e.capitalize} #{m}" %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<div class="form container">
+<%= form_for @task do |t| %>
+</div>
+
+<div class="form-group">
+<%= t.label :title, "名稱" %>
+<%= t.text_field :title, class: "form-control"  %>
+</div>
+
+<div class="form-group">
+<%= t.label :due_date, "完成期限" %>
+<%= t.text_field :due_date, class: "form-control"  %>
+</div>
+
+<div class="form-group">
+<%= t.label :note, "備註" %>
+<%= t.text_area :note, class: "form-control"  %>
+</div>
+
+<%= t.submit %>
+
+<% end %>
+</div>
+
+
